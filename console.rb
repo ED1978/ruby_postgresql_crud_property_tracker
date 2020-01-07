@@ -31,7 +31,10 @@ property2.save()
 
 # property1.delete()
 
+property1.buy_let_status = "Bought"
+property1.update()
+
 p properties = Property.all()
 
-# binding.pry
-# nil
+binding.pry
+nil
