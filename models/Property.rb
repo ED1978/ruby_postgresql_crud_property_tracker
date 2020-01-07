@@ -39,6 +39,15 @@ class Property
     db.close
   end
 
+  def Property.all()
+    db = PG.connect({dbname: 'property_tracker', host: 'localhost'})
+    sql = "SELECT * FROM properties"
+    db.prepare("all", sql)
+    properties = db.exec_prepared("all")
+    db.close
+    return properties.map { |property| Property.new(property)}
+  end
+
   def Property.delete_all()
     db = PG.connect({dbname: 'property_tracker', host: 'localhost'})
     sql = "DELETE FROM properties"
