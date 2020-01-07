@@ -29,7 +29,9 @@ property2 = Property.new(
 )
 property2.save()
 
-properties = Property.all()
+# property1.delete()
 
-binding.pry
-nil
+p properties = Property.all()
+
+# binding.pry
+# nil
