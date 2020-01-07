@@ -1,6 +1,8 @@
 require('pry-byebug')
 require_relative('./models/Property.rb')
 
+Property.delete_all()
+
 property1 = Property.new(
   {
     'address' => '106 Lancefield Quay',
